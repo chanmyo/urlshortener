@@ -91,7 +91,7 @@ class Url extends REST_Controller
     {
         if(!$this->get('hash') || trim($this->get('hash')) == '')
         {
-            $this->response(NULL, 400);
+            $this->response(array('error' => 'Invalid command or missing parameters'), 404);
         }
         
         if ($this->get('hash'))
